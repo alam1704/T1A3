@@ -1,4 +1,4 @@
-#using 4 dictionaries to store the possible questions and answers
+#using 3 dictionaries to store the possible questions and answers
 
 level_1 = {
     "question1": {

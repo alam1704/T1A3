@@ -3,7 +3,8 @@
 #score is kept as a list
     #   [0] points for current questions
     #   [1] total points
-    #   [2] total time of quiz      
+    #   [2] total time of quiz
+    #   [3] total correct answers      
     #score_data = [0, 0, 0]
 
 def scoring (answer, user_answer, time_taken, score_data, level):
