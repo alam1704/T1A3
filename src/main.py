@@ -58,16 +58,11 @@ def menu():
         if option == 2:
             leaderboard()  
         elif option == 3:
-            get_help()
+            about()#-----------------------------------------------------------
         elif option == 0:
             exit_game()
         else:
             print("INVALID INPUT, PLEASE TRY AGAIN.")
-
-def get_help():
-    with open(sys.path[0] + "/help.md") as help:
-        print(help.read())
-
 
 #get user name
 def get_name():
@@ -124,10 +119,10 @@ def exit_game():
     exit()
 
 # main application
+
 clear() #not clearing screen - bug
 welcome_screen()
 pyramid_image(10)
-
 user_name = get_name()
 print("\n")
 
@@ -143,19 +138,7 @@ while True:
     #   [1] total points
     #   [2] total time of quiz      
     score_data = [0, 0, 0]
-    #in case library of questions is < number of questions being asked in quiz; I included an exception for a ValueError.
     
-    #def current_quiz():
-    #will come back to this once minimum viable product is available.
-    
-    """try:
-        current_quiz = randomizer(questions.level_1) # this will give a ValueError if Sample is larger than population of questions.    
-    except ValueError:
-        print("Not enough questions in question.py file, please add more before continuing.")
-        print("Or change the number_of_questions you would like to be asked in the randomizer.py")
-        break"""
-    
-
     for i in range(0, 9):
         
         if score_data[1] == 0:
