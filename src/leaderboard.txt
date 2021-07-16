@@ -1,0 +1,4 @@
+9     10.16     user
+5     4.19       user_name
+12     5.84       user_name
+15     11.16       None

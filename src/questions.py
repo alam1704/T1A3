@@ -28,9 +28,6 @@ level_1 = {
             "incorrect3": "This is incorrect answer 3 for question 3",
         }
     },
-}   
-
-level_2 = {
     "question4": {
         "question" : "This is question 4",
         "answers": {
@@ -58,9 +55,6 @@ level_2 = {
             "incorrect3": "This is incorrect answer 3 for question 6",
         }
     },
-}  
-
-level_3 = {
     "question7": {
         "question" : "This is question 7",
         "answers": {
@@ -88,4 +82,202 @@ level_3 = {
             "incorrect3": "This is incorrect answer 3 for question 9",
         }
     },
+    "question10": {
+        "question" : "This is question 10",
+        "answers": {
+            "correct": "This is correct answer for question 10",
+            "incorrect1": "This is incorrect answer 1 for question 10",
+            "incorrect2": "This is incorrect answer 2 for question 10",
+            "incorrect3": "This is incorrect answer 3 for question 10",
+        }
+    },
 }  
+
+#level 2 questions
+level_2 = {
+    "question11": {
+        "question" : "This is question 11",
+        "answers": {
+            "correct": "This is correct answer for question 11",
+            "incorrect1": "This is incorrect answer 1 for question 11",
+            "incorrect2": "This is incorrect answer 2 for question 11",
+            "incorrect3": "This is incorrect answer 3 for question 11",
+        }
+    },
+    "question12": {
+        "question" : "This is question 12",
+        "answers": {
+            "correct": "This is correct answer for question 12",
+            "incorrect1": "This is incorrect answer 1 for question 12",
+            "incorrect2": "This is incorrect answer 2 for question 12",
+            "incorrect3": "This is incorrect answer 3 for question 12",
+        }
+    },
+    "question13": {
+        "question" : "This is question 13",
+        "answers": {
+            "correct": "This is correct answer for question 13",
+            "incorrect1": "This is incorrect answer 1 for question 13",
+            "incorrect2": "This is incorrect answer 2 for question 13",
+            "incorrect3": "This is incorrect answer 3 for question 13",
+        }
+    },
+    "question14": {
+        "question" : "This is question 14",
+        "answers": {
+            "correct": "This is correct answer for question 14",
+            "incorrect1": "This is incorrect answer 1 for question 14",
+            "incorrect2": "This is incorrect answer 2 for question 14",
+            "incorrect3": "This is incorrect answer 3 for question 14",
+        }
+    },
+    "question15": {
+        "question" : "This is question 15",
+        "answers": {
+            "correct": "This is correct answer for question 15",
+            "incorrect1": "This is incorrect answer 1 for question 15",
+            "incorrect2": "This is incorrect answer 2 for question 15",
+            "incorrect3": "This is incorrect answer 3 for question 15",
+        }
+    },
+    "question16": {
+        "question" : "This is question 16",
+        "answers": {
+            "correct": "This is correct answer for question 16",
+            "incorrect1": "This is incorrect answer 1 for question 16",
+            "incorrect2": "This is incorrect answer 2 for question 16",
+            "incorrect3": "This is incorrect answer 3 for question 16",
+        }
+    },
+    "question17": {
+        "question" : "This is question 17",
+        "answers": {
+            "correct": "This is correct answer for question 17",
+            "incorrect1": "This is incorrect answer 1 for question 17",
+            "incorrect2": "This is incorrect answer 2 for question 17",
+            "incorrect3": "This is incorrect answer 3 for question 17",
+        }
+    },
+    "question18": {
+        "question" : "This is question 18",
+        "answers": {
+            "correct": "This is correct answer for question 18",
+            "incorrect1": "This is incorrect answer 1 for question 18",
+            "incorrect2": "This is incorrect answer 2 for question 18",
+            "incorrect3": "This is incorrect answer 3 for question 18",
+        }
+    },
+    "question19": {
+        "question" : "This is question 19",
+        "answers": {
+            "correct": "This is correct answer for question 19",
+            "incorrect1": "This is incorrect answer 1 for question 19",
+            "incorrect2": "This is incorrect answer 2 for question 19",
+            "incorrect3": "This is incorrect answer 3 for question 19",
+        }
+    },
+    "question20": {
+        "question" : "This is question 20",
+        "answers": {
+            "correct": "This is correct answer for question 20",
+            "incorrect1": "This is incorrect answer 1 for question 20",
+            "incorrect2": "This is incorrect answer 2 for question 20",
+            "incorrect3": "This is incorrect answer 3 for question 20",
+        }
+    },
+}
+
+
+#level 3 questions
+level_3 = {
+    "question21": {
+        "question" : "This is question 21",
+        "answers": {
+            "correct": "This is correct answer for question 21",
+            "incorrect1": "This is incorrect answer 1 for question 21",
+            "incorrect2": "This is incorrect answer 2 for question 21",
+            "incorrect3": "This is incorrect answer 3 for question 21",
+        }
+    },
+    "question22": {
+        "question" : "This is question 22",
+        "answers": {
+            "correct": "This is correct answer for question 22",
+            "incorrect1": "This is incorrect answer 1 for question 22",
+            "incorrect2": "This is incorrect answer 2 for question 22",
+            "incorrect3": "This is incorrect answer 3 for question 22",
+        }
+    },
+    "question23": {
+        "question" : "This is question 23",
+        "answers": {
+            "correct": "This is correct answer for question 23",
+            "incorrect1": "This is incorrect answer 1 for question 23",
+            "incorrect2": "This is incorrect answer 2 for question 23",
+            "incorrect3": "This is incorrect answer 3 for question 23",
+        }
+    },
+    "question24": {
+        "question" : "This is question 24",
+        "answers": {
+            "correct": "This is correct answer for question 24",
+            "incorrect1": "This is incorrect answer 1 for question 24",
+            "incorrect2": "This is incorrect answer 2 for question 24",
+            "incorrect3": "This is incorrect answer 3 for question 24",
+        }
+    },
+    "question25": {
+        "question" : "This is question 25",
+        "answers": {
+            "correct": "This is correct answer for question 25",
+            "incorrect1": "This is incorrect answer 1 for question 25",
+            "incorrect2": "This is incorrect answer 2 for question 25",
+            "incorrect3": "This is incorrect answer 3 for question 25",
+        }
+    },
+    "question26": {
+        "question" : "This is question 26",
+        "answers": {
+            "correct": "This is correct answer for question 26",
+            "incorrect1": "This is incorrect answer 1 for question 26",
+            "incorrect2": "This is incorrect answer 2 for question 26",
+            "incorrect3": "This is incorrect answer 3 for question 26",
+        }
+    },
+    "question27": {
+        "question" : "This is question 27",
+        "answers": {
+            "correct": "This is correct answer for question 27",
+            "incorrect1": "This is incorrect answer 1 for question 27",
+            "incorrect2": "This is incorrect answer 2 for question 27",
+            "incorrect3": "This is incorrect answer 3 for question 27",
+        }
+    },
+    "question28": {
+        "question" : "This is question 28",
+        "answers": {
+            "correct": "This is correct answer for question 28",
+            "incorrect1": "This is incorrect answer 1 for question 28",
+            "incorrect2": "This is incorrect answer 2 for question 28",
+            "incorrect3": "This is incorrect answer 3 for question 28",
+        }
+    },
+    "question29": {
+        "question" : "This is question 29",
+        "answers": {
+            "correct": "This is correct answer for question 29",
+            "incorrect1": "This is incorrect answer 1 for question 29",
+            "incorrect2": "This is incorrect answer 2 for question 29",
+            "incorrect3": "This is incorrect answer 3 for question 29",
+        }
+    },
+    "question30": {
+        "question" : "This is question 30",
+        "answers": {
+            "correct": "This is correct answer for question 30",
+            "incorrect1": "This is incorrect answer 1 for question 30",
+            "incorrect2": "This is incorrect answer 2 for question 30",
+            "incorrect3": "This is incorrect answer 3 for question 30",
+        }
+    },
+}

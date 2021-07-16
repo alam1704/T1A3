@@ -1,0 +1,39 @@
+{
+    "leaderboard" : [
+    {
+        "user_name" : "Alex",
+        "score" : 21,
+        "time" : 10.00
+    },
+    {
+        "user_name" : "Bruce",
+        "score" : 21,
+        "time" : 9.00
+    },
+    {
+        "user_name" : "Christine",
+        "score" : 21,
+        "time" : 8.00
+    },
+    {
+        "user_name" : "Isabelle",
+        "score" : 18,
+        "time" : 12.00
+    },
+    {
+        "user_name" : "Jeanette",
+        "score" : 21,
+        "time" : 11.00
+    },
+    {
+        "user_name" : "Mart",
+        "score" : 15,
+        "time" : 14.00
+    },
+    {
+        "user_name" : "Steve",
+        "score" : 15,
+        "time" : 15.00
+    }
+]
+}

@@ -10,6 +10,7 @@ import cowsay
 
 from randomizer import randomizer
 from scoring import scoring, print_current_score
+from leaderboard import leaderboard
 import questions
 
 #clear screen function
@@ -48,26 +49,29 @@ def menu():
     
     print("     [1] Play Game")
     print("     [2] Display Leaderboard")
-    print("     [3] Get Help")
+    print("     [3] About the game")
     print("     [0] Exit program")
     
     while True:
-        option = int(input("Enter your option here:"))
-        if option == 1:
-            break
-        if option == 2:
-            leaderboard()  
-        elif option == 3:
-            about()#-----------------------------------------------------------
-        elif option == 0:
-            exit_game()
-        else:
-            print("INVALID INPUT, PLEASE TRY AGAIN.")
+        try:
+            option = int(input("Enter your option here:\n\n"))
+            if option == 1:
+                break
+            if option == 2:
+                leaderboard()  
+            elif option == 3:
+                about()#-----------------------------------------------------------
+            elif option == 0:
+                exit_game()
+            else:
+                print("INVALID INPUT, PLEASE TRY AGAIN.")
+        except ValueError:
+                print("INVALID INPUT, PLEASE TRY AGAIN.")
 
 #get user name
 def get_name():
     while True: #continues to ask for input until user gives a valid response.
-        user_name = input("\nPlease enter a player name of less than 10 characters:\n").strip()
+        user_name = input("\nPlease enter a player name of less than 10 characters:\n\n").strip()
         if user_name == "quit":
             exit_game()
         #want only characters less than 10 to ensure leaderboard is readable.    
@@ -106,9 +110,14 @@ def review_answer(question_number, quiz_data, answers, user_answer):
         print(f"        Good try, unfortunately you answered the question incorrectly.")
         print(f"        The correct answer was \'{current_quiz[5][i]}\'")
 
-#create a leaderboard
-def leaderboard():
-    print("This is a leaderboard")
+#function for starting game
+def start_game():
+    print("\n")
+    print("Game will start in:")
+    for x in 3, 2, 1:
+        print(x)
+        time.sleep(1)
+    print("\n\n")
 
 #function for exiting the game.
 def exit_game():
@@ -124,10 +133,8 @@ clear() #not clearing screen - bug
 welcome_screen()
 pyramid_image(10)
 user_name = get_name()
-print("\n")
-
 menu()
-
+start_game()
 
 while True:
 
@@ -136,27 +143,28 @@ while True:
     #score is kept as a list
     #   [0] points for current questions
     #   [1] total points
-    #   [2] total time of quiz      
-    score_data = [0, 0, 0]
+    #   [2] total time of quiz
+    #   [3] total correct answers     
+    score_data = [0, 0, 0, 0]
     
-    for i in range(0, 9):
+    for i in range(0, 10):
         
-        if score_data[1] == 0:
-            current_quiz = randomizer(questions.level_1)
-            level = 1
-        if score_data[1] > 10:
-            current_quiz = randomizer(questions.level_2)
-            level = 2
-        elif score_data[1] > 30:
+        if score_data[1] >= 9:
             current_quiz = randomizer(questions.level_3)
             level = 3
+        elif score_data[1] >= 3:
+            current_quiz = randomizer(questions.level_2)
+            level = 2
+        else:
+            current_quiz = randomizer(questions.level_1)
+            level = 1
 
         start_time = time.time()
         print_question(i, current_quiz, answers)
         
         user_answer = get_user_answer(answers)
         end_time = time.time()
-        time_taken = end_time - start_time
+        time_taken = round((end_time - start_time), 2)
 
         review_answer(i, current_quiz, answers, user_answer)
 
@@ -164,21 +172,34 @@ while True:
 
         print_current_score(score_data)
 
-        """if score_data[1] > 20:
-            current_quiz = randomizer(questions.level_2)
-            if score_data[1] > 40:
-                current_quiz = randomizer(questions.level_3)
+        if i + 1 != 10:
+            if input("Press enter to continue to the next questions") == "quit":
+                exit_game()
         else:
-            if i + 1 != len(current_quiz[0]):
-                if input("Press enter to continue to the next question ") == "quit":
-                    exit_quiz()
-            else:
-                if input("Press enter to continue to your results ") == "quit":
-                    exit_quiz()"""
+            if input("Press enter to continue to the next questions") == "quit":
+                exit_game()
+    clear()    
+    print(f"Congraulations on completing the pyramid, {user_name}!\n\n")
+    print(f"You anwered {score_data[3]} out of 10 questions correctly!\n")
+    print(f"Your final score and the pyramid level you built up to is {score_data[1]} level(s)! Superb Work!\n")
+    print(f"You only took {score_data[2]} seconds to complete the pyramid\n")
+    pyramid_image(score_data[1])
+    print("\n\n")
 
+    leaderboard(score_data[1], score_data[2], user_name)
+    
+    menu()
+    start_game()
+#        """current_leaderboard = leaderboard(user_name, score_data[1], score_data[2])
+#
+#        if end_of_quiz_input == "l":
+#            print_leaderboard(current_leaderboard)
+#            end_of_quiz_input = leaderboard_input()#
 
-
-    break
+#        if end_of_game_input == "y":
+#            continue
+#        else:
+#            exit_game()"""
 
 #keyboard interrupt exception - could instead say a "goodbye" message
 
