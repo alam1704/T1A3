@@ -168,7 +168,7 @@ while True:
     #   [3] total correct answers     
     
     for i in range(0, 10):
-        
+        #if player has enough scores they can advance levels. So questions will be selected randomly from different dictionaries based on the current points they have.
         if score_data[1] >= 9:
             current_quiz = randomizer(questions.level_3)
             level = 3
@@ -184,7 +184,8 @@ while True:
         
         user_answer = get_user_answer(answers)
         end_time = time.time()
-        time_taken = "{:0.2f}".format(end_time - start_time)
+        time_taken = end_time - start_time
+        time_str = 
         
 
         review_answer(i, current_quiz, answers, user_answer)
