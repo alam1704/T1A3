@@ -4,7 +4,7 @@ import questions
 # returns a list of lists containing the questions, choices and the answer key
 
 def randomizer(question_dict):
-    number_of_questions = 3
+    number_of_questions = 10
 
     #create individual empty list to hold corresponding selections
     question_list = []

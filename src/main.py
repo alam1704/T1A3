@@ -43,6 +43,32 @@ def pyramid_image(rows):
         print()
 """Need to try raise an exemption for 0 points"""
 
+#display menu of game
+def menu():
+    
+    print("     [1] Play Game")
+    print("     [2] Display Leaderboard")
+    print("     [3] Get Help")
+    print("     [0] Exit program")
+    
+    while True:
+        option = int(input("Enter your option here:"))
+        if option == 1:
+            break
+        if option == 2:
+            leaderboard()  
+        elif option == 3:
+            get_help()
+        elif option == 0:
+            exit_game()
+        else:
+            print("INVALID INPUT, PLEASE TRY AGAIN.")
+
+def get_help():
+    with open(sys.path[0] + "/help.md") as help:
+        print(help.read())
+
+
 #get user name
 def get_name():
     while True: #continues to ask for input until user gives a valid response.
@@ -55,13 +81,6 @@ def get_name():
         else:
             print(f"\nWelcome {user_name}! Let's begin learning and building!\n")
             break
-
-#display menu of game
-def menu():
-    print("[1] Play Game")
-    print("[2] Display Leaderboard")
-    print("[3] Get Help")
-    print("[0] Exit program")
 
 # prints the question
 def print_question(question_number, quiz_data, answers):
@@ -92,22 +111,29 @@ def review_answer(question_number, quiz_data, answers, user_answer):
         print(f"        Good try, unfortunately you answered the question incorrectly.")
         print(f"        The correct answer was \'{current_quiz[5][i]}\'")
 
+#create a leaderboard
+def leaderboard():
+    print("This is a leaderboard")
+
 #function for exiting the game.
 def exit_game():
-    clear()
     print("\n")
     print("Thanks for playing")
     print("\n")
     time.sleep(2)
-    clear()
     exit()
 
 # main application
 clear() #not clearing screen - bug
 welcome_screen()
 pyramid_image(10)
+
 user_name = get_name()
 print("\n")
+
+menu()
+
+
 while True:
 
     answers = "a","b","c","d"
@@ -119,18 +145,28 @@ while True:
     score_data = [0, 0, 0]
     #in case library of questions is < number of questions being asked in quiz; I included an exception for a ValueError.
     
-    try:
-        if score_data[1] > 5:
-            current_quiz = randomizer(questions.level_2) # this will give a ValueError if Sample is larger than population of questions.
-        else:
-            current_quiz = randomizer(questions.level_1)
+    #def current_quiz():
+    #will come back to this once minimum viable product is available.
+    
+    """try:
+        current_quiz = randomizer(questions.level_1) # this will give a ValueError if Sample is larger than population of questions.    
     except ValueError:
         print("Not enough questions in question.py file, please add more before continuing.")
         print("Or change the number_of_questions you would like to be asked in the randomizer.py")
-        break
+        break"""
     
 
-    for i in range(0, len(current_quiz[0])):
+    for i in range(0, 9):
+        
+        if score_data[1] == 0:
+            current_quiz = randomizer(questions.level_1)
+            level = 1
+        if score_data[1] > 10:
+            current_quiz = randomizer(questions.level_2)
+            level = 2
+        elif score_data[1] > 30:
+            current_quiz = randomizer(questions.level_3)
+            level = 3
 
         start_time = time.time()
         print_question(i, current_quiz, answers)
@@ -141,9 +177,23 @@ while True:
 
         review_answer(i, current_quiz, answers, user_answer)
 
-        score_data = scoring(current_quiz[5][i], user_answer, time_taken, score_data)
+        score_data = scoring(current_quiz[5][i], user_answer, time_taken, score_data, level)
 
         print_current_score(score_data)
+
+        """if score_data[1] > 20:
+            current_quiz = randomizer(questions.level_2)
+            if score_data[1] > 40:
+                current_quiz = randomizer(questions.level_3)
+        else:
+            if i + 1 != len(current_quiz[0]):
+                if input("Press enter to continue to the next question ") == "quit":
+                    exit_quiz()
+            else:
+                if input("Press enter to continue to your results ") == "quit":
+                    exit_quiz()"""
+
+
 
     break
 

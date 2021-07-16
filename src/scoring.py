@@ -6,10 +6,10 @@
     #   [2] total time of quiz      
     #score_data = [0, 0, 0]
 
-def scoring (answer, user_answer, time_taken, score_data):
+def scoring (answer, user_answer, time_taken, score_data, level):
     score_data[0] = 0
     if answer == user_answer:
-        score_data[0] += 10
+        score_data[0] += 10*level
         score_data[1] += score_data[0] # adds current points to total points.
         score_data[2] += time_taken
     return score_data
