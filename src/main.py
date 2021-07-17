@@ -99,7 +99,7 @@ def get_user_answer(answers):
         if user_answer in answers:
             break
         else:
-            print("Sorry, this is not on of the 4 choices, please try again.")
+            print("Sorry, this is not one of the 4 choices, please try again.")
 
     return user_answer
 

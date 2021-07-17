@@ -16,7 +16,11 @@ then
         source venv/bin/activate
         pip3 install -r requirements.txt
         python3 main.py
-    fi  
+    fi
+    if test "$response" = "n" -o "$response" = "N";
+    then
+        echo "Okay, exiting installation."
+    fi
 fi
 
 if test "$#" = 0;
@@ -24,7 +28,7 @@ then
     python3 main.py
 fi
 
-if  [[ "$#" > 0 ]];
+if  [[ "$#" > 1 ]];
 then
     echo "Invalid/too many arguments, please try again."
 fi
