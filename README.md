@@ -78,3 +78,30 @@ The idea was to have an active leaderboard stored locally on a text file, "leade
 
 The WWTBAP game was intended to be simple to use. A Menu page is set up to give user the options as described above, and they need only to answer a quiz of 10 questions to complete the game. The building of the actual pyramid is built in the background as well as the calculation of the players scores. If a user is experiencing difficulty, there is a help.md file that will run in the bash terminal after exiting the game. This file contains user instructions on how to correctly run the application on the player's operating system. Instructions and information about the game is also included with the menu at the start of the applications.
 
+## Control Flow Diagram
+#
+![Control flow diagram](/docs/WWTBAP_control_flow.png)
+
+## Implementation Plan 
+
+For this particular project, I used Trello to assist with planning and implementing the tasks. Each part of the project was divided into their general features/functions. 
+
+The first part of the project was to design the opening/welcome message the program would output, grab the players name and then also output a menu for the player to select how they wanted to proceed. Next it was the body part of my project which included a function that would select questions at random as well as a scoring feature for the game. Then, the leaderboard was the last feature to implement. 
+
+All the important tasks necessary to build these functions are given a section on the Trello board, with specific goal cards created that act like building blocks for the final feature. 
+
+![Trello 1](/docs/trello_1.png)
+![Trello 2](/docs/trello_2.png)
+![Trello 3](/docs/trello_3.png)
+![Trello 4](/docs/trello_4.png)
+![Trello 5](/docs/trello_5.png)
+![Trello 6](/docs/trello_6.png)
+![Trello 7](/docs/trello_7.png)
+![Trello 8](/docs/trello_8.png)
+![Trello 9](/docs/trello_9.png)
+![Trello 10](/docs/trello_10.png)
+![Trello 11](/docs/trello_11.png)
+![Trello 12](/docs/trello_12.png)
+
+
+

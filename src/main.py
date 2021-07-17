@@ -60,7 +60,7 @@ def menu():
             if option == 2:
                 leaderboard(score_data[1],score_data[2], user_name)  
             elif option == 3:
-                get_name()#-----------------------------------------------------------
+                raise StopIteration
             elif option == 0:
                 exit_game()
             else:
@@ -79,7 +79,8 @@ def get_name():
             print(f"\nSorry, \'{user_name}\' is invalid. Please try again.\nMake sure it is less than 10 characters.")
         else:
             print(f"\nWelcome {user_name}! Let's begin learning and building!\n")
-            break
+            return user_name
+        
 
 # prints the question
 def print_question(question_number, quiz_data, answers):
@@ -151,16 +152,22 @@ print("\n")
 print("You can exit anytime during the quiz stage by inputing \"quit\".")
 print("\n")
 
-user_name = get_name()
-menu()
-start_game()
+
+
+
 
 answers = "a","b","c","d"
 score_data = [0, 0, 0, 0]
+quiz1 = randomizer(questions.level_1)
+quiz2 = randomizer(questions.level_2)
+quiz3 = randomizer(questions.level_3)
 while True:
-
-    
-    
+    user_name = get_name()    
+    try:
+        menu()
+    except StopIteration:
+        continue
+    start_game()
     #score is kept as a list
     #   [0] points for current questions
     #   [1] total points
@@ -170,13 +177,13 @@ while True:
     for i in range(0, 10):
         #if player has enough scores they can advance levels. So questions will be selected randomly from different dictionaries based on the current points they have.
         if score_data[1] >= 9:
-            current_quiz = randomizer(questions.level_3)
+            current_quiz = quiz3
             level = 3
         elif score_data[1] >= 3:
-            current_quiz = randomizer(questions.level_2)
+            current_quiz = quiz2
             level = 2
         else:
-            current_quiz = randomizer(questions.level_1)
+            current_quiz = quiz1
             level = 1
 
         start_time = time.time()
@@ -184,9 +191,7 @@ while True:
         
         user_answer = get_user_answer(answers)
         end_time = time.time()
-        time_taken = end_time - start_time
-        time_str = 
-        
+        time_taken = round((end_time - start_time), 2)
 
         review_answer(i, current_quiz, answers, user_answer)
 
@@ -204,14 +209,12 @@ while True:
     print(f"Congraulations on completing the pyramid, {user_name}!\n\n")
     print(f"You anwered {score_data[3]} out of 10 questions correctly!\n")
     print(f"Your final score and the pyramid level you built up to is {score_data[1]} level(s)! Superb Work!\n")
-    print(f"You only took {score_data[2]} seconds to complete the pyramid\n")
+    print(f"You only took {round(score_data[2], 2)} seconds to complete the pyramid\n")
     pyramid_image(score_data[1])
     print("\n\n")
 
-    leaderboard(score_data[1], score_data[2], user_name)
+    leaderboard(score_data[1], round(score_data[2], 2), user_name)
     
-    menu()
-    start_game()
 #        """current_leaderboard = leaderboard(user_name, score_data[1], score_data[2])
 #
 #        if end_of_quiz_input == "l":
